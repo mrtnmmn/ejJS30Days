@@ -1,0 +1,35 @@
+<!-- Ej 01
+        Crea una aplicacion web que permita escribir una caja de texto (numeros separados por comas)
+        al pulsar un boton mostrara por pantalla la suma del os numeros positivos introducidos-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej01</title>
+</head>
+<body>
+    <input type="text" id="txt">
+    <button id="button" onclick="sumar()">Sumar positivos</button>
+    <span id="result">text</span>
+
+    <script>
+        function sumar() {
+            let suma = 0
+            var arraySol = document.getElementById("txt").value.split(',')
+
+
+            for (let i = 0; i < arraySol.length; i++) {
+                let parsedInt = Number(arraySol[i])
+                if (parsedInt > 0) {
+                    suma += parsedInt
+                }
+            }
+
+            document.getElementById('result').innerHTML = suma
+
+        }
+    </script>
+</body>
+</html>
