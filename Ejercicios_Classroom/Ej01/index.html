@@ -1,34 +1,44 @@
-<!-- Ej 01
-        Crea una aplicacion web que permita escribir una caja de texto (numeros separados por comas)
-        al pulsar un boton mostrara por pantalla la suma del os numeros positivos introducidos-->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ej01</title>
+    <title>Document</title>
 </head>
 <body>
-    <input type="text" id="txt">
-    <button id="button" onclick="sumar()">Sumar positivos</button>
-    <span id="result">text</span>
+    <h1>Sumador de 3 valores</h1><br/>
+
+    <input type="text" id="num1"><br/>
+    <input type="text" id="num2"><br/>
+    <input type="text" id="num3"><br/>
+    
+    <button id="calcular" onclick="calcular()">Calcular</button>
+    <button id="limpiar" onclick="limpiar()">Limpiar</button> <br/>
+
+    <br/>
+    <br/>
+    
+    <span id="resultado"></span>
 
     <script>
-        function sumar() {
-            let suma = 0
-            var arraySol = document.getElementById("txt").value.split(',')
+        
+        function calcular() {
+            let input1 = parseInt(document.getElementById("num1").value)
+            let input2 = parseInt(document.getElementById("num2").value)
+            let input3 = parseInt(document.getElementById("num3").value)
 
-            for (let i = 0; i < arraySol.length; i++) {
-                let parsedInt = Number(arraySol[i])
-                if (parsedInt > 0) {
-                    suma += parsedInt
-                }
-            }
+            let suma = input1 + input2 + input3
 
-            document.getElementById('result').innerHTML = suma
-
+            document.getElementById("resultado").innerHTML = suma
         }
+
+        function limpiar() {
+            document.getElementById("num1").innerHTML = ""
+            document.getElementById("num2").innerHTML = ""
+            document.getElementById("num3").innerHTML = ""
+            document.getElementById("resultado").innerHTML = ""
+        }
+
     </script>
 </body>
 </html>
