@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej02</title>
+</head>
+<body>
+    <h1>Sumador de 3 valores</h1><br/>
+
+    <input type="text" id="num1"><br/>
+    <input type="text" id="num2"><br/>
+    <input type="text" id="num3"><br/>
+
+    <select id="combo">
+        <option value="sumar">Sumar</option>
+        <option value="restar">Restar</option>
+        <option value="multiplicar">Multiplicar</option>
+        <option value="dividir">Dividir</option>
+    </select> <br/>
+
+    <button id="calcular" onclick="node()">Calcular</button>
+    <button id="limpiar" onclick="limpiar()">Limpiar</button> <br/>
+
+    <br/>
+    <br/>
+    
+    <span id="resultado"></span>
+
+    <script>
+
+        function node() {
+            let opt = document.getElementById("combo").value
+
+            console.log(opt)
+
+            switch (opt) {
+                case 'sumar': 
+                    sumar()
+                    break
+                case 'restar':
+                    restar()
+                    break
+                case 'multiplicar':
+                    multiplicar()
+                    break
+                case 'dividir':
+                    dividir()
+                    break
+                default:
+                    console.log('Error al seleccionar')
+            }
+
+        }
+        
+        function getArray() {
+            let array = []
+            array.push(parseInt(document.getElementById("num1").value))
+            array.push(parseInt(document.getElementById("num2").value))
+            array.push(parseInt(document.getElementById("num3").value))
+
+            return array
+        }
+
+        function sumar() {
+
+            let arr = getArray()
+            let suma = 0
+
+            for (let i = 0; i < arr.length; i++) {
+                suma += arr[i]
+            }
+
+            document.getElementById("resultado").innerHTML = suma
+        }
+
+        function restar() {
+
+            let arr = getArray
+            let resta = arr[0]
+
+            for (let i = 1; i < arr.length; i++) {
+                resta -= arr[i]
+            }
+
+            document.getElementById("resultado").innerHTML = resta
+
+        }
+
+        function multiplicar() {
+            let arr = getArray()
+            let mult = arr[0]
+
+            for (let i = 1; i < arr.length; i++) {
+                mult *= arr[i]
+            }
+
+            document.getElementById("resultado").innerHTML = mult
+
+        }
+
+        function dividir() {
+            let arr = getArray()
+            let div = arr[0]
+
+            for (let i = 1; i < arr.length; i++) {
+                div /=  arr[i]
+            }
+
+            document.getElementById("resultado").innerHTML = div
+        }
+
+        function limpiar() {
+            document.getElementById("num1").innerHTML = ""
+            document.getElementById("num2").innerHTML = ""
+            document.getElementById("num3").innerHTML = ""
+            document.getElementById("resultado").innerHTML = ""
+        }
+
+    </script>
+</body>
+</html>
