@@ -131,10 +131,7 @@ console.log('El elemento borrado es: '+ultimoElementoBorrado)
 Sustituye los números -1,7,8 por los números 0,0 	(pista: usa splice)
 Muestra por pantalla el array resultante */
 
-
-let arra = [6,3,55,-1,7,8,9,34,2]
-arra.splice(3,4,0,0)
-console.log(arra)
+console.log(arra.splice(3,4,0,0))
 
 /* Usando el array, haz que salga por pantalla la frase 'Hola Pepe'
 Muestra por pantalla la cantidad de booleanos que hay en el primer 
@@ -143,9 +140,9 @@ Muestra el precio con iva de la manzana por pantalla
 Muestra por pantalla todos los números guardados en la última 
 posición del array [4,5,6] pero duplicando su valor	(pista: usa map) */
 
-let arr = [
+let arr4 = [
     [true, false, true],
-    Jose,
+    'Jose',
     {
         nombre:'Manzana',
         precio:{
@@ -163,6 +160,48 @@ let arr = [
     [4,5,6]
 ]
 
-console.log()
+console.log(arr4[5]('Pepe'))
 
+let cont = 0
 
+for (let i = 0; i < arr4[1].length; i++) {
+    if (arr4[0][i]) {
+        cont += 1
+    }
+}
+console.log(cont + ' booleanos')
+
+console.log(arr4[2].precio.sinIva)
+
+console.log(arr4.length)
+
+let doubles =(arr4[6]).map(function(x) {
+    return (parseInt(x*2))
+})
+
+for (let i = 0; i < doubles.length; i++) {
+    console.log(doubles[i])
+}
+
+// Ej10 
+let sett = new Set()
+sett.add('Marcos')
+sett.add('Felix')
+sett.add('Sara')
+
+console.log(sett.has('Felix'))
+sett.delete('Marcos')
+console.log(sett.size)
+sett.add('Ana')
+
+// Ej11
+/*
+fetch('https://randomuser.me/api')
+  .then(response => response.json() )
+  .then(json => {
+   })
+*/
+
+//30Days
+
+// A1
