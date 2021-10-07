@@ -4,8 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>B1</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <input id="pass" type="text"> <button id="Validate">Validate</button>
+    <div class="center">
+        <div>
+            <input id="pass" type="text"> <button onclick="validate()">Validate</button>
+            <div id="result">
+                
+            </div>
+        </div>
+        <label>&nbsp;&nbsp;</label>
+        <div>
+            <h3>Requisitos para la contrasenha</h3>
+            <input type="checkbox" id="ch1"><label>Obligatorio el uso de mayusculas</label><br>
+            <input type="checkbox" id="ch2"><label>Obligatorio el uso de numeros</label><br>
+            <input type="checkbox" id="ch3"><label>Obligatorio el uso de simbolos raros</label><br>
+            <div id="divChar">
+                <input type="checkbox" id="ch4" onclick="minChar()"><label>Numero minimo de caracteres</label><br>
+            </div>
+        </div>
+    </div>
+
+    <script src="B1JS.js"></script> 
 </body>
 </html>
