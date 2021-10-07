@@ -19,5 +19,5 @@ function validate() {
         result += '<p>No empieza por \'Sa\' y acaba por \'do\'</p><br>'    
     }
 
-    document.getElementById("result").innerHTML = result
+    document.getElementById('result').innerHTML = result
 }

@@ -11,3 +11,27 @@
     justify-content: center;
     align-items: center;
 } 
+
+.mainChristmasRed {
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+    font-size: 500%;
+    color: red;
+}
+
+.mainChristmasGreen {
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+    font-size: 500%;
+    color: green;
+}
+
+.hohoho {
+    height: 25vh;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+    content: url(https://i.ytimg.com/vi/DlQoXP2XH68/maxresdefault.jpg);
+}
