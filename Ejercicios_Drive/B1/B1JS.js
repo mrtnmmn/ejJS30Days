@@ -9,10 +9,27 @@ function validate () {
     let validated = true
 
     if (ch1) {
-        if (checkCaps(txt)) {
-
+        if (!checkCaps(txt)) {
+            validated = false
         }
     }
+    if (ch2) {
+        if (!checkNumbers(txt)) {
+           validated = false  
+        }
+    }
+    if (ch3) {
+        if (!checkSimbols(txt)) {
+            validated = false 
+        }
+    }
+
+    if (validated) {
+        document.getElementById('result').innerHTML = "Fuerte"
+    } else {
+        document.getElementById('result').innerHTML = "Debil"
+    }
+
 } 
 
 function minChar() {
@@ -20,20 +37,49 @@ function minChar() {
 }
 
 function minCharOff() { 
-    document.getElementById("divChar").innerHTML = '<input type="checkbox" id="ch4" onclick="minChar()"><label>Numero minimo de caracteres</label><br>'
+    document.getElementById('divChar').innerHTML = '<input type="checkbox" id="ch4" onclick="minChar()"><label>Numero minimo de caracteres</label><br>'
 }
 
 function checkCaps(str) {
-    let txt = ''
-    txt + str
     let res = false
-
     let char = ''
 
-    for (let i = 0; i < txt.length; i++) {
-        char = txt.charAt(i)
-        if (char === char.toUpperCase) {
+    for (let i = 0; i < str.length; i++) {
+        char = str.charAt(i)
+        if (char === char.toUpperCase()) {
             res = true
         }
     }
+    return res
+}
+
+function checkNumbers(str) {
+    let res = false
+    let char = ''
+
+    for (let i = 0; i < str.length; i++) {
+        char = str.charAt(i)
+        if (parseInt(char)) {
+            res = true
+        }
+    }
+    return res
+}
+
+function checkSimbols(str) {
+    let res = false 
+    let char = ''
+    let arr =['~', '_', '-'] 
+
+    for (let i = 0; i < str.lenght; i++){
+        char=str.charAt(i)
+        for (let l = 0; l < arr.length; l++) {
+            if (char === arr[l]) {
+                console.log(char === arr[l])
+                res = true
+            }
+        }
+    }
+
+    return res 
 } 
