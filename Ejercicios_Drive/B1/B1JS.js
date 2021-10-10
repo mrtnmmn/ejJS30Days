@@ -6,25 +6,36 @@ function validate () {
     let ch3 = document.getElementById('ch3').checked
     let ch4 = document.getElementById('ch4').checked
 
-    let validated = true
+    let numVal = 0
+    let numValFinal = 0
 
     if (ch1) {
-        if (!checkCaps(txt)) {
-            validated = false
+        numVal += 1
+        if (checkCaps(txt)) {
+            numValFinal += 1
         }
     }
     if (ch2) {
-        if (!checkNumbers(txt)) {
-           validated = false  
+        numVal += 1
+        if (checkNumbers(txt)) {
+           numValFinal += 1
         }
     }
     if (ch3) {
-        if (!checkSimbols(txt)) {
-            validated = false 
+        numVal += 1
+        if (checkSimbols(txt)) {
+            numValFinal += 1
         }
     }
 
-    if (validated) {
+    if (ch4) {
+        numVal += 1
+        if (checkMinChar(txt)) {
+            numValFinal += 1
+        }
+    }
+
+    if (numVal === numValFinal) {
         document.getElementById('result').innerHTML = "Fuerte"
     } else {
         document.getElementById('result').innerHTML = "Debil"
@@ -69,17 +80,27 @@ function checkNumbers(str) {
 function checkSimbols(str) {
     let res = false 
     let char = ''
-    let arr =['~', '_', '-'] 
+    let arr =['~', '_', '-']
 
-    for (let i = 0; i < str.lenght; i++){
+    for (let i = 0; i < str.length; i++){
         char=str.charAt(i)
         for (let l = 0; l < arr.length; l++) {
             if (char === arr[l]) {
-                console.log(char === arr[l])
                 res = true
             }
         }
     }
 
     return res 
-} 
+}
+
+function checkMinChar(str) {
+    let res = false
+    let nChar = document.getElementById('minChar').value
+
+    if (str.length >= nChar) {
+        res = true
+    }
+
+    return res
+}
