@@ -1,0 +1,18 @@
+.center {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 50vh;
+    color:transparent;
+
+}
+
+.day {
+    text-shadow: black;
+}
+
+.night {
+    text-shadow: white;
+}
