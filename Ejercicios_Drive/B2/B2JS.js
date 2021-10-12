@@ -1,4 +1,4 @@
-let date = new Date('December 25, 1995')
+let date = new Date()
 
 let day = date.getDate()
 let month = date.getMonth() + 1 
