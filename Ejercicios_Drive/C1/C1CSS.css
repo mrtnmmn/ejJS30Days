@@ -10,7 +10,9 @@
 }
 
 .day {
+    color: transparent;
     text-shadow: black;
+    background: #4f4f4f;
 }
 
 .night {

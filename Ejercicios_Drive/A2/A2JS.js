@@ -1,16 +1,10 @@
-let arr = [1,2,3,4,5,6,7,8,9]
+let arr = [1,2,3,4,5,6,7,8,9,10]
 
-let esisten = false
+console.log(arr.includes(5))
 
-for (let i = 0; i < arr.length; i++ ) {
-    if (arr[i] === 5) {
-        esisten = true
-    }
-}
-console.log(esisten)
-
+let half = arr.length/2
 if (arr.length % 2 === 0) {
-    console.log(arr[(arr.length / 2) - 1], arr[(arr.length)/2])
+    console.log(arr[(half) - 1], arr[half])
 } else {
-    console.log(arr[Math.round(arr.length/2) - 1])
+    console.log(arr[Math.round(half) - 1])
 }

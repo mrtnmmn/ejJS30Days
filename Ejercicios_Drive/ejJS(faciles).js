@@ -195,13 +195,11 @@ console.log(sett.size)
 sett.add('Ana')
 
 // Ej11
-/*
+
 fetch('https://randomuser.me/api')
   .then(response => response.json() )
   .then(json => {
+      console.log('Name: ' + json['results'][0]['name']['first'] + ' ' + json['results'][0]['name']['last'])
+      console.log('Street: ' + json['results'][0]['location']['street']['name'])
    })
-*/
 
-//30Days
-
-// A1

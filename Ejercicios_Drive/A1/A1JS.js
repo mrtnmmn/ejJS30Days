@@ -1,12 +1,11 @@
+document.getElementById('button').addEventListener('click',comprobar)
+
 function comprobar() {
     let numA = document.getElementById("numA").value
     let numB = document.getElementById("numB").value
 
-    console.log(numA)
-
     let mayor = 0
     let menor = 0
-    
 
     if (numA === numB) {
         document.getElementById("resultado").innerHTML = 'Los numeros son iguales'
