@@ -27,6 +27,8 @@ function comprobar() {
 
     pushMarcador()
     generarElementos()
+
+    document.getElementById('result').value = ''
 }
 
 function generarElementos() {
